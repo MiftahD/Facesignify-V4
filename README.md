@@ -8,7 +8,7 @@
 - **Metode:** `POST`
 - **Deskripsi:** Mendaftarkan pengguna baru.
 - **Request Body:**
-```json
+  
 {
   "username": "string",
   "email": "string",
@@ -21,7 +21,6 @@
 - **Metode:** `POST`
 - **Deskripsi:** Login untuk Murid.
 - **Request Body:**
-```json
 {
   "email": "string"
   "password": "string",
@@ -33,7 +32,6 @@
 - **Metode:** `POST`
 - **Deskripsi:** Login untuk Guru.
 - **Request Body:**
-```json
 {
   "username": "string",
   "password": "string"
@@ -64,7 +62,7 @@
 - **Metode:** `POST`
 - **Deskripsi:** Menambahkan kelas baru.
 - **Request Body:**
-```json
+
 {
   "studentId": "string",
   "teacherUsername": "string",
@@ -78,7 +76,7 @@
 - **Metode:** `POST`
 - **Deskripsi:** Menambahkan siswa ke dalam kelas yang sudah ada.
 - **Request Params: classCode: string (Kode kelas)**
-```json
+
 {
  "studentId": "string"
 }
