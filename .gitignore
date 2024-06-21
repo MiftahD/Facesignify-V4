@@ -1,0 +1,8 @@
+Dockerfile
+
+.env
+
+../config/serviceAccountKey.json
+
+/home/c376d4ky0301/facesignify-api/node_modules
+node_modules/
