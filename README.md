@@ -7,6 +7,7 @@
 - **URL:** `/register`
 - **Metode:** `POST`
 - **Deskripsi:** Mendaftarkan pengguna baru.
+- **Auth:** Tidak.
 - **Request Body:**
   
 {
@@ -20,6 +21,7 @@
 - **URL:** `/login/user`
 - **Metode:** `POST`
 - **Deskripsi:** Login untuk Murid.
+- **Auth:** Tidak.
 - **Request Body:**
 {
   "email": "string"
@@ -31,6 +33,7 @@
 - **URL:** `/login/admin`
 - **Metode:** `POST`
 - **Deskripsi:** Login untuk Guru.
+- **Auth:** Tidak.
 - **Request Body:**
 {
   "username": "string",
@@ -42,13 +45,15 @@
 - **URL:** `/logout`
 - **Metode:** `GET`
 - **Deskripsi:** Logout Admin atau Pengguna.
+- **Auth:** Iya(Bearer Token).
 
 
 #### 5. Mendapatkan Informasi Pengguna
 
 - **URL:** `/userinfo/{username}`
 - **Metode:** `GET`
-- **Deskripsi:**Mendapatkan informasi pengguna berdasarkan username.
+- **Deskripsi:** Mendapatkan informasi pengguna berdasarkan username.
+- **Auth:** Iya(Bearer Token).
 - **Request Params:**
 {
   "username": "string",
@@ -61,8 +66,8 @@
 - **URL:** `/classes`
 - **Metode:** `POST`
 - **Deskripsi:** Menambahkan kelas baru.
+- **Auth:** Tidak.
 - **Request Body:**
-
 {
   "studentId": "string",
   "teacherUsername": "string",
@@ -75,6 +80,7 @@
 - **URL:** `/classes/{classCode}/join`
 - **Metode:** `POST`
 - **Deskripsi:** Menambahkan siswa ke dalam kelas yang sudah ada.
+- **Auth:** Tidak.
 - **Request Params: classCode: string (Kode kelas)**
 
 {
@@ -86,12 +92,14 @@
 - **URL:** `/classes`
 - **Metode:** `GET`
 - **Deskripsi:** Mendaftarkan daftar semua kelas.
+- **Auth:** Tidak.
 
 #### 9. Mendapatkan Detail Kelas
 
 - **URL:** `/classes/details`
 - **Metode:** `GET`
 - **Deskripsi:** Mendapatkan detail dari sebuah kelas.
+- **Auth:** Iya(Bearer Token).
 - **Request Params:**
 {
 classCode: string (Kode kelas, opsional)
@@ -103,7 +111,8 @@ subject: string (Subjek kelas, opsional)
 
 - **URL:** `/classes/{classCode}/predictions`
 - **Metode:** `POST`
-- **Deskripsi:** Menambahkan prediksi ke dalam kelas
+- **Deskripsi:** Menambahkan prediksi ke dalam kelas.
+- **Auth:** Iya(Bearer Token).
 - **Request payload:**
 ```Multipart/form-data dengan field `image` yang berisi file gambar dan field `classCode` yang berisi text kode dari kelas
 
@@ -112,6 +121,7 @@ subject: string (Subjek kelas, opsional)
 - **URL:** `/predict`
 - **Metode:** `POST`
 - **Deskripsi:** Melakukan prediksi pengenalan wajah
+- **Auth:** Iya(Bearer Token).
 - **Request payload:**
 ```Multipart/form-data dengan field `image` yang berisi file gambar.
 
